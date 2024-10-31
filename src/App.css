@@ -1,0 +1,44 @@
+
+
+.header{
+    text-align: center;
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.signup{
+    font-size: 25px;
+    text-align: center;
+}
+
+.form-container {
+    min-width: 230px;
+    background-color: #e8eee8;
+    width: 35%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+    .submit-button {
+    margin-top:15px;
+    width: 20%;
+    align-self: center; 
+    cursor: pointer;
+  }
+  
+  /* Button hover effect */
+  .submit-button:hover {
+    background-color: #4a8ac4;
+
+  }
+  
