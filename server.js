@@ -36,6 +36,31 @@ const items = [{
     res.status(404).json({ message: "Item not found" });
   }
   })
+  app.post('/api/items',(req,res)=>{
+    const {item_name, description, img_url, price, category_name}= req.body;
+    const newItem = {
+        item_id : items.length+1,
+        item_name,
+        description,
+        img_url,
+        price,
+        category_name
+    }
+    items.push(newItem);
+    res.status(201).json({ item: newItem })
+  })
+  app.delete('/api/items/:item_id', (req, res) => {
+    const { item_id } = req.params;
+        const itemIndex = items.findIndex(item => item.item_id === parseInt(item_id));
+  
+    if (itemIndex > -1) {
+      items.splice(itemIndex, 1);  
+      res.status(204).send(); 
+    } else {
+      res.status(404).json({ message: "Item not found" });
+    }
+  });
+  
 
   app.listen(PORT,()=>{
     console.log(`Server is running on http://localhost:${PORT}` )
