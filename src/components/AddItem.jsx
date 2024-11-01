@@ -18,7 +18,7 @@ const [itemData, setItemData] = useState({
   const handleSubmit = async (e)=>{
     e.preventDefault();
     try{
-        await addItem(itemData)
+         addItem(itemData)
         alert('Item added successfully');
         setItemData({
             item_name: '',
@@ -54,7 +54,11 @@ const [itemData, setItemData] = useState({
         Category:
         <input type="text" name="category_name" value={itemData.category_name} onChange={handleChange} />
       </label>
-      <button type="submit onClick={handleSubmit}">Add Item</button>
+      <label>
+        listed_by:
+        <input type="number" name="listed_by" value={itemData.listed_by} onChange={handleChange} />
+      </label>
+      <button type="submit ">Add Item</button>
     </form>
   )
 }
